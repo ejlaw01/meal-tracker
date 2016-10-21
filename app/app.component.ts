@@ -11,6 +11,9 @@ import { Meal } from './meal.model';
   <new-meal
    (newMealSender)="addMeal($event)"
   ></new-meal>
+  <edit
+    (clickSender)="addMeal($event)"
+  ></edit>
   `
 })
 

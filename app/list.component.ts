@@ -7,8 +7,10 @@ import { Meal } from './meal.model';
   template: `
   <div class="list">
     <h2>My meals:</h2>
-    <div class="list-item" *ngFor="let currentMeal of childMealList">
-    <edit></edit>
+    <div class="list-item" (click)="selectMeal(currentMeal)" *ngFor="let currentMeal of childMealList">
+      <h3>{{ currentMeal.name }}</h3>
+      <h4>{{ currentMeal.details }}</h4>
+      <h4>{{ "Calories: " + currentMeal.calories }}</h4>
     </div>
   </div>
   `
@@ -16,4 +18,8 @@ import { Meal } from './meal.model';
 
 export class ListComponent {
   @Input() childMealList: Meal[];
+  selectedMeal: Meal = this.childMealList[0];
+  selectMeal(clickedMeal: Meal) {
+    this.selectedMeal = clickedMeal;
+  }
 }
