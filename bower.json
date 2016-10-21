@@ -1,0 +1,20 @@
+{
+  "name": "meal-tracker",
+  "description": "web app to add, edit and delete foods you have eaten throughout the day",
+  "main": "",
+  "authors": [
+    "Ethan <ejlaw01@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
