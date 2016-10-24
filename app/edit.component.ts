@@ -10,17 +10,17 @@ import { Meal } from './meal.model';
       <h3>Edit</h3>
         <div class="edit-name">
           <label>Edit name:</label>
-          <input [(ngModel)]="selectedMeal.name">
+          <input [(ngModel)]="childSelectedMeal.name">
         </div>
         <div class="edit-details">
           <label>Edit details:</label>
-          <input [(ngModel)]="selectedMeal.details">
+          <input [(ngModel)]="childSelectedMeal.details">
         </div>
         <div class="edit-calories">
           <label>Edit calories:</label>
-          <input [(ngModel)]="selectedMeal.calories">
+          <input [(ngModel)]="childSelectedMeal.calories">
         </div>
-        <button (click)="finishedEditing()" class="done-button">Done</button>
+        <button (click)="finishEditing()" class="done-button">Done</button>
       </div>
   `
 })
@@ -28,16 +28,8 @@ import { Meal } from './meal.model';
 export class EditComponent {
   @Input() childSelectedMeal: Meal;
   @Output() clickSender = new EventEmitter();
-  
-  finishedEditing() {
-    this.clickSender.emit();
-  }
 
-  /*selectedMeal: Meal = null;
-  editMeal(clickedMeal: Meal) {
-    this.selectedMeal = clickedMeal;
+  finishEditing() {
+    this.clickSender.emit(this.childSelectedMeal);
   }
-  hideEditForms() {
-    this.selectedMeal = null;
-  }*/
 }

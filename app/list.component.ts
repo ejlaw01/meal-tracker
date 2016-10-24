@@ -14,7 +14,7 @@ import { Meal } from './meal.model';
     </div>
     <edit
       [childSelectedMeal]="selectedMeal"
-      (doneClickedSender)="finishedEditing($event)"
+      (editedMeal)="finishEditing($event)"
     ></edit>
   </div>
   `
