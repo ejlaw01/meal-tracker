@@ -11,10 +11,6 @@ import { Meal } from './meal.model';
   <new-meal
    (newMealSender)="addMeal($event)"
   ></new-meal>
-  <edit
-    [childSelectedMeal]="selectedMeal"
-    (doneClickedSender)="finishedEditing()"
-  ></edit>
   `
 })
 

@@ -12,6 +12,10 @@ import { Meal } from './meal.model';
       <h4>{{ currentMeal.details }}</h4>
       <h4>{{ "Calories: " + currentMeal.calories }}</h4>
     </div>
+    <edit
+      [childSelectedMeal]="selectedMeal"
+      (doneClickedSender)="finishedEditing($event)"
+    ></edit>
   </div>
   `
 })
@@ -21,5 +25,6 @@ export class ListComponent {
   selectedMeal: Meal;
   selectMeal(clickedMeal: Meal) {
     this.selectedMeal = clickedMeal;
+    console.log(this.selectedMeal);
   }
 }
