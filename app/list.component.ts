@@ -7,7 +7,13 @@ import { Meal } from './meal.model';
   template: `
   <div class="list">
     <h2>My meals:</h2>
-    <div class="list-item" (click)="selectMeal(currentMeal)" *ngFor="let currentMeal of childMealList">
+    <h3>Filter by...</h3>
+    <select class="dropdown" (change)="onChange($event.target.value)">
+      <option selected="selected" value="all">All</option>
+      <option value="low">Less than 500</option>
+      <option value="high">More than 500</option>
+    </select>
+    <div class="list-item" (click)="selectMeal(currentMeal)" *ngFor="let currentMeal of childMealList | calorieFilter:selectedCalorieFilter">
       <h3>{{ currentMeal.name }}</h3>
       <h4>{{ currentMeal.details }}</h4>
       <h4>{{ "Calories: " + currentMeal.calories }}</h4>
@@ -25,5 +31,10 @@ export class ListComponent {
   selectMeal(clickedMeal: Meal) {
     this.selectedMeal = clickedMeal;
     console.log(this.selectedMeal);
+  }
+  public selectedCalorieFilter: string = "all";
+  onChange(optionFromMenu) {
+    this.selectedCalorieFilter = optionFromMenu;
+    console.log(this.selectedCalorieFilter);
   }
 }
