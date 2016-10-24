@@ -12,7 +12,8 @@ import { Meal } from './meal.model';
    (newMealSender)="addMeal($event)"
   ></new-meal>
   <edit
-    (clickSender)="addMeal($event)"
+    [childSelectedMeal]="selectedMeal"
+    (doneClickedSender)="finishedEditing()"
   ></edit>
   `
 })

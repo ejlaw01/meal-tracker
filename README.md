@@ -18,7 +18,7 @@ _3. Run program with `$ gulp serve` command._
 
 ## Known Bugs
 
-_N/A_
+_..._
 
 ## Technologies Used
 

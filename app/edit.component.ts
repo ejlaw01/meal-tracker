@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { AppComponent } from './app.component';
 import { Meal } from './meal.model';
 
@@ -8,7 +8,6 @@ import { Meal } from './meal.model';
   template: `
     <div *ngIf="selectedMeal">
       <h3>Edit</h3>
-        <button (click)="sendMeal(selectedMeal)">Edit</button>
         <div class="edit-name">
           <label>Edit name:</label>
           <input [(ngModel)]="selectedMeal.name">
@@ -21,22 +20,23 @@ import { Meal } from './meal.model';
           <label>Edit calories:</label>
           <input [(ngModel)]="selectedMeal.calories">
         </div>
-        <button (click)="hideEditForms()" class="done-button">Done</button>
+        <button (click)="saveMeal()" class="done-button">Done</button>
       </div>
   `
 })
 
 export class EditComponent {
+  @Input() childSelectedMeal: Meal;
   @Output() clickSender = new EventEmitter();
-  sendMeal(mealToSend: Meal) {
-    this.clickSender.emit(mealToSend);
+  saveMeal() {
+    this.clickSender.emit();
   }
 
-  selectedMeal: Meal = null;
+  /*selectedMeal: Meal = null;
   editMeal(clickedMeal: Meal) {
     this.selectedMeal = clickedMeal;
   }
   hideEditForms() {
     this.selectedMeal = null;
-  }
+  }*/
 }

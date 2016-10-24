@@ -18,7 +18,7 @@ import { Meal } from './meal.model';
 
 export class ListComponent {
   @Input() childMealList: Meal[];
-  selectedMeal: Meal = this.childMealList[0];
+  selectedMeal: Meal;
   selectMeal(clickedMeal: Meal) {
     this.selectedMeal = clickedMeal;
   }
