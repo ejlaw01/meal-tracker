@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { AppComponent } from './app.component';
 import { Meal } from './meal.model';
 
@@ -6,7 +6,7 @@ import { Meal } from './meal.model';
 @Component({
   selector: 'edit',
   template: `
-    <div *ngIf="childSelectedMeal">
+    <div id="edit-form" *ngIf="childSelectedMeal">
       <h3>Edit</h3>
         <div class="edit-name">
           <label>Edit name:</label>
@@ -27,9 +27,8 @@ import { Meal } from './meal.model';
 
 export class EditComponent {
   @Input() childSelectedMeal: Meal;
-  @Output() clickSender = new EventEmitter();
 
   finishEditing() {
-    this.clickSender.emit(this.childSelectedMeal);
+    this.childSelectedMeal = null;
   }
 }

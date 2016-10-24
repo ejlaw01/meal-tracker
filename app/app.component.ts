@@ -5,12 +5,12 @@ import { Meal } from './meal.model';
   selector: 'my-app',
   template: `
   <h1>Meal Tracker</h1>
+  <new-meal
+    (newMealSender)="addMeal($event)"
+  ></new-meal>
   <list
     [childMealList]="masterMealList"
   ></list>
-  <new-meal
-   (newMealSender)="addMeal($event)"
-  ></new-meal>
   `
 })
 
