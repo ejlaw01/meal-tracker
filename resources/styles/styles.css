@@ -3,14 +3,28 @@ body {
 }
 
 h1 {
-  text-align: center;
+  position: relative;
+  left:360px;
   font-weight: 200;
   margin: 30px;
 }
 
 h2 {
   margin: 15px;
+  margin-top: 40px;
+  margin-bottom: 30px;
   font-weight: lighter;
+}
+
+h3 {
+  margin-left: 40px;
+  font-weight: normal;
+  font-size: 2em;
+}
+
+h4 {
+  margin-left: 40px;
+  font-weight: normal;
 }
 
 input {
@@ -34,8 +48,34 @@ h4 {
   margin-top: 20px;
 }
 
+.dropdown {
+  height: 40px;
+  width: 120px;
+  margin-left: 40px;
+  background-color: #fffffe;
+}
+
 .list-item {
   height: 130px;
   border-bottom: solid lightgrey 1px;
   margin-bottom: 30px;
+}
+
+.filter {
+  position: absolute;
+  left: 700px;
+  top: 120px;
+}
+
+#add-form {
+ margin-left: 30px;
+}
+
+#edit-form {
+
+}
+
+#add-button {
+  position: relative;
+  left: 70px;
 }
